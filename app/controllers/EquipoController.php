@@ -60,7 +60,7 @@ class EquipoController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             $equipo = new Equipo();
             if ($equipo->eliminar($id)){
-                header("Location: index.php?action=equipos_");
+                header("Location: index.php?action=equipos");
             } else {
                 echo "Error al eliminar el equipo";
             }
