@@ -16,14 +16,27 @@ switch ($action) {
         (new AuthController())->logout();
         break;
 
-    case 'equipos':
+    case 'equipos_listar':
         (new EquipoController())->index();
         break;
 
-    case 'actualizar':
+    case 'equipos_crear':
+        (new EquipoController())->crear();
+        break;
+
+    case 'equipos_actualizar':
         $id = $_GET['id'] ?? null;
         if ($id) {
             (new EquipoController())->actualizar($id);
+        } else {
+            echo "ID de equipo no proporcionado";
+        }
+        break;
+
+    case 'equipos_eliminar':
+        $id = $_GET['id'] ?? null;
+        if ($id) {
+            (new EquipoController())->eliminar($id);
         } else {
             echo "ID de equipo no proporcionado";
         }
